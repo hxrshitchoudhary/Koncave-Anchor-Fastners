@@ -8,12 +8,10 @@
   --steel-light: #666666;
   --accent-primary: #D2232A;
   --accent-hover: #A01820;
-
   --text-primary: #121212;
   --text-secondary: #555555;
   --text-light: #888888;
   --border-light: #E0E0E0;
-
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
@@ -21,7 +19,6 @@
   --nav-height: 90px;
 }
 
-/* GLOBAL RESET & OVERFLOW FIX FOR MOBILE GLITCHING */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -129,23 +126,22 @@ a {
   background-color: var(--accent-primary);
 }
 
-/* --- STYLIZED BRAND NAME HIGHLIGHT --- */
 .hero-company-name {
-  display: inline-block;
-  font-size: 1.4rem;
+  display: flex;
+  width: fit-content;
+  font-size: 1.05rem;
   font-weight: 900;
   color: #ffffff;
   background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-hover) 100%);
-  padding: 10px 24px;
+  padding: 8px 20px;
   border-radius: 6px;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
   box-shadow: 0 8px 20px rgba(210, 35, 42, 0.3);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* --- ANIMATIONS --- */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -235,7 +231,6 @@ a {
   transform: translateX(4px);
 }
 
-/* --- BUTTONS --- */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -250,6 +245,8 @@ a {
   border-radius: 4px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .btn-primary {
@@ -300,7 +297,6 @@ a {
   width: 100%;
 }
 
-/* --- NAVBAR --- */
 .navbar {
   position: fixed;
   top: 0;
@@ -327,6 +323,9 @@ a {
   align-items: center;
   width: 100%;
   height: 100%;
+  background: var(--bg-card);
+  z-index: 10;
+  position: relative;
 }
 
 .brand {
@@ -428,7 +427,10 @@ a {
   gap: 8px;
 }
 
-/* --- MODAL --- */
+.mobile-menu-toggle {
+  display: none;
+}
+
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -466,7 +468,7 @@ a {
 .modal-header h2 {
   font-size: 1.8rem;
   text-transform: uppercase;
-  margin-bottom: 0.25rem;
+  margin: 0;
 }
 
 .modal-form {
@@ -513,7 +515,6 @@ a {
   margin-bottom: 0.5rem;
 }
 
-/* --- HOME HERO --- */
 .hero-modern-split {
   display: flex;
   height: calc(100vh - var(--nav-height));
@@ -521,8 +522,18 @@ a {
   background: var(--steel-dark);
 }
 
+.hero-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1;
+  position: relative;
+  width: 100%;
+}
+
 .hero-left {
-  flex: 0 0 45%;
+  flex: 0 0 50%;
   padding: 4rem 5%;
   display: flex;
   flex-direction: column;
@@ -532,7 +543,8 @@ a {
 }
 
 .hero-badge {
-  display: inline-flex;
+  display: flex;
+  width: fit-content;
   align-items: center;
   gap: 8px;
   background: rgba(255, 255, 255, 0.05);
@@ -546,7 +558,7 @@ a {
 }
 
 .hero-split-text {
-  font-size: 3.5rem;
+  font-size: 3.2rem;
   color: #fff;
   margin-bottom: 1rem;
   text-transform: uppercase;
@@ -568,8 +580,12 @@ a {
 
 .hero-actions {
   display: flex;
+  flex-direction: row;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  align-items: center;
+  white-space: nowrap;
+  width: fit-content;
 }
 
 .hero-scroll-indicator {
@@ -592,7 +608,7 @@ a {
 }
 
 .hero-right {
-  flex: 0 0 55%;
+  flex: 0 0 50%;
   position: relative;
   clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%);
   overflow: hidden;
@@ -654,7 +670,6 @@ a {
   background: var(--accent-primary);
 }
 
-/* --- HOME OVERVIEW --- */
 .section-title {
   font-size: 2.8rem;
   margin-bottom: 1rem;
@@ -754,7 +769,6 @@ a {
   margin-top: 0.25rem;
 }
 
-/* --- HOME INFRASTRUCTURE & QUALITY SECTIONS --- */
 .infrastructure-section {
   background: var(--steel-dark);
   padding: 5rem 0;
@@ -887,7 +901,6 @@ a {
   box-shadow: var(--shadow-sm);
 }
 
-/* --- ABOUT PAGE REDESIGN & IMAGE FIX --- */
 .about-hero-redefined {
   padding: 4rem 2rem;
   display: flex;
@@ -897,11 +910,14 @@ a {
 }
 
 .hero-redefined-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   flex: 1.2;
 }
 
 .hero-title-massive {
-  font-size: 3.5rem;
+  font-size: 3rem;
   line-height: 1.05;
   text-transform: uppercase;
   letter-spacing: -1px;
@@ -1060,7 +1076,6 @@ a {
   font-size: 0.95rem;
 }
 
-/* --- CATALOG LIST --- */
 .catalog-header-modern {
   display: flex;
   justify-content: space-between;
@@ -1174,7 +1189,6 @@ a {
   min-width: 220px;
 }
 
-/* --- REDESIGNED PRODUCT DETAIL PAGE --- */
 .breadcrumb-modern {
   margin-bottom: 1.5rem;
   display: flex;
@@ -1258,7 +1272,6 @@ a {
   letter-spacing: 1px;
 }
 
-/* --- TABLE FIXES --- */
 .product-data-container {
   display: flex;
   flex-direction: column;
@@ -1392,7 +1405,6 @@ a {
   border-radius: 4px;
 }
 
-/* --- FOOTER --- */
 .footer {
   background: var(--steel-dark);
   color: #fff;
@@ -1534,10 +1546,6 @@ a {
   margin: 0;
 }
 
-/* ==============================================================
-   RESPONSIVE FIXES (MOBILE OPTIMIZATION)
-   ============================================================== */
-
 @media (max-width: 1024px) {
   .product-header-full {
     flex-direction: column;
@@ -1629,7 +1637,6 @@ a {
     padding: 0 1.25rem;
   }
 
-  /* HORIZONTAL MOBILE NAVIGATION (NO DROPDOWN) */
   .brand-text {
     display: none;
   }
@@ -1654,12 +1661,10 @@ a {
 
   .cart-btn-content span {
     display: none;
-    /* Hide the text inside button, show only Icon */
   }
 
-  /* Typography Scaling */
   .hero-split-text {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .section-title {
@@ -1667,16 +1672,15 @@ a {
   }
 
   .hero-title-massive {
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
 
   .hero-company-name {
-    font-size: 1.15rem;
-    padding: 8px 16px;
+    font-size: 0.85rem;
+    padding: 6px 14px;
     letter-spacing: 1px;
   }
 
-  /* PORTFOLIO CATALOG HEADER FIX (GUARANTEE VISIBILITY) */
   .catalog-header-modern {
     flex-direction: column;
     gap: 1.25rem;
@@ -1697,7 +1701,6 @@ a {
     width: 100%;
   }
 
-  /* Modals */
   .modal-box {
     padding: 1.5rem;
     margin: 1rem;
@@ -1710,7 +1713,6 @@ a {
     gap: 1rem;
   }
 
-  /* Layout elements */
   .experience-badge {
     left: 0;
     top: 0;
@@ -1737,7 +1739,6 @@ a {
     border-width: 4px;
   }
 
-  /* Catalogue specific */
   .cli-img {
     width: 100%;
     height: 200px;
@@ -1760,7 +1761,6 @@ a {
     padding: 1.5rem;
   }
 
-  /* Footer */
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
@@ -1782,7 +1782,6 @@ a {
     font-size: 1.1rem;
   }
 
-  /* Table mobile fixes */
   .data-card {
     padding: 0;
     border-radius: 4px;
@@ -1819,5 +1818,17 @@ a {
 
   .app-reference-wrapper {
     padding: 1rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
   }
 }
