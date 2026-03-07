@@ -1,6 +1,6 @@
 export const companyInfo = {
   name: "KONCAVE",
-  legalName: "KONCAVE ANCHOR FASTNERS PVT LTD.",
+  legalName: "KONCAVE ANCHOR FASTENERS PVT LTD.",
   tagline: "HIGH-PERFORMANCE ANCHORING & FASTENING SOLUTIONS",
   certifications: "ISO 9001:2015 CERTIFIED",
   address: "Village Ismaila, 11B Ismaila, Near Rana Batta, Tehsil Sampla, Rohtak, Haryana-124501, India",
@@ -16,7 +16,7 @@ export const aboutUsData = {
     title: "Engineering Integrity.",
     subtitle: "Precision engineering, uncompromising safety, and a proud contributor to the Make in India initiative."
   },
-  intro: "KONCAVE ANCHOR FASTNERS PVT LTD. is an ISO 9001:2015 certified manufacturer and a dedicated participant in the 'Make in India' initiative, specializing in high-performance anchoring and fastening solutions. We are committed to delivering precision, structural safety, and long-term reliability across architectural and industrial applications.",
+  intro: "KONCAVE ANCHOR FASTENERS PVT LTD. is an ISO 9001:2015 certified manufacturer and a dedicated participant in the 'Make in India' initiative, specializing in high-performance anchoring and fastening solutions. We are committed to delivering precision, structural safety, and long-term reliability across architectural and industrial applications.",
   vision: "To be the leading global provider of high-tensile structural fastening solutions, recognized universally for uncompromising safety, innovative engineering, and absolute reliability.",
   mission: "To engineer and manufacture top-tier anchoring systems through advanced technology, stringent quality control, and a commitment to the 'Make in India' initiative, ensuring the structural integrity of the world's most demanding projects.",
   values: [
